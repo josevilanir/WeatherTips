@@ -1,0 +1,16 @@
+{
+    "name": "WeatherWise Codespace",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "bash"
+    },
+    "extensions": [
+      "vscjava.vscode-gradle",
+      "fwcd.kotlin",
+      "ms-androidtools.vscode-android-emulator"
+    ],
+    "postCreateCommand": "./gradlew build || echo 'Gradle build será executado localmente no Android Studio'"
+  }
+  
