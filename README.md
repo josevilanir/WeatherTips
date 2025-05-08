@@ -1,2 +1,3 @@
-# WeatherTips
-Repositorio para disciplina de Desenvolvimento de sistemas em despositivos moveis
+# WeatherWise
+
+App de previsão do tempo feito com Kotlin + Jetpack Compose.
