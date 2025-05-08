@@ -1,3 +1,4 @@
+
 package com.example.weatherwise.screens
 
 import androidx.compose.foundation.layout.*
@@ -8,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -47,7 +49,7 @@ fun WeatherScreen(navController: NavController) {
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            Text(text = "Próximos dias:", fontSize = 18.sp, fontWeight = androidx.compose.ui.text.font.FontWeight.Bold)
+            Text(text = "Próximos dias:", fontSize = 18.sp, fontWeight = FontWeight.Bold)
 
             Spacer(modifier = Modifier.height(8.dp))
 
@@ -55,3 +57,30 @@ fun WeatherScreen(navController: NavController) {
                 items(forecast) { dia ->
                     Card(
                         modifier = Modifier
+                            .padding(end = 8.dp)
+                            .width(120.dp),
+                        elevation = 4.dp
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .padding(16.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(text = dia, fontSize = 16.sp)
+                        }
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(32.dp))
+
+            Button(
+                onClick = { navController.navigate("tip") },
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFF0077CC)),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("Ver Dica do Dia", color = Color.White)
+            }
+        }
+    }
+}
